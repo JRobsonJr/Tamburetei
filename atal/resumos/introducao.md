@@ -5,6 +5,7 @@ Um **problema computacional** possui uma entrada exigida e uma saída esperada. 
 **Algoritmo** é um procedimento mais abstrato, geral, suficiente para implementação. Dessa forma, é independente de máquina ou compilador. Já **programa** é a implementação do algoritmo.
 
 **Pseudo-código** é uma sequência de comandos (dentre os quais existem comandos de repetição, de atribuição, de seleção, de sequência...). 
+
 Estratégias para fazer pseudo-códigos de qualidade:
 - Pensar graficamente
 - Adicionar comentários
