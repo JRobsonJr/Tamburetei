@@ -2,7 +2,7 @@
 
 ## Sumário
 - [Introdução à Disciplina](introducao.md)
-- Análise Assintótica
+- [Análise Assintótica (Incompleto)](analiseAssintotica.md)
 - Análise Amortizada
 - Análise de Corretude
 - Projeto de Algoritmos

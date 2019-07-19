@@ -46,29 +46,39 @@ Existem três principais estratégias para o cálculo de complexidade:
 
 ### Método da árvore
 
-Ao analisar o merge sort, famoso algoritmo de ordenação, chega-se à seguinte relação de recorrência:
+O **método da árvore de recursão** consiste em esboçar uma árvore que representa a execução da relação de recorrência analisada para, a partir dela, determinar uma aproximação da complexidade do algoritmo estudado. 
+
+Vamos entender como funciona essa abordagem com um exemplo: analisaremos o merge sort, famoso algoritmo de ordenação. Considere a relação de recorrência do merge sort, dada por:
+
 ![equation](https://latex.codecogs.com/gif.latex?T%28n%29%20%3D%202T%28n/2%29%20&plus;%20O%28n%29)
-T(n) = 2T(n/2) + O(n)
-T(n) <= 2T(n/2) + cn
 
-T(n) => cn
+A imagem a seguir representa a árvore de recursão do merge sort. 
 
-Para fazer a simplificação da árvore, suporemos que n é uma potência de 2; dessa forma, trata-se de uma árvore com todos os níveis completos.
+![Árvore de recursão do merge sort](https://cdn.kastatic.org/ka-perseus-images/5fcbebf66560d8fc490de2a0d8a0e5b1d65c5c54.png)
 
-Técnica: Relaciona-se o número do nível da árvore (i) e o tamanho da entrada em cada nível.
-Nível i     Tamanho
-0           n
-1           n / 2
-2           n / 4
-...         ...
-i           n / 2^i
+Ao montarmos a árvore, a fim de simplificar os cálculos, supomos que n é uma potência de 2. Assim, sabemos que se trata de uma árvore com todos os níveis completos.
 
-Dessa forma, no nível i, temos que o tamanho da entrada é n / 2^i. Para descobrir qual o último nível (e, por consequência, descobrir a altura da árvore), sabe-se que o tamanho da entrada final será 1; logo, tem-se:
-n / 2^i = 1 => n = 2^i => i = log n
-Como a árvore começa no nível 0 e o último nível é log n, a altura dessa árvore de recursão é log n + 1. Por fim, como visto, cada nível tem a mesma soma de complexidades: cn. Portanto, como sabemos o número de níveis, o cálculo de complexidade se resume a:
-T(n) = cn(log n + 1) = cnlog n + cn = O(n log n)
+A técnica envolvida no cálculo de complexidade consiste em relacionar o número do nível da árvore (i), o tamanho da entrada em cada nível e a soma das complexidades envolvidas em cada nível.
 
-Exemplo: T(n) = 3T(n / 4) + cn² (Resultado é O(n²)). Para esse exemplo e vários outros, é interessante ter em mente como é feito o cálculo da soma de uma PG infinita; com o método da árvore, o foco não é encontrar um resultado preciso, mas um upper bound para o problema. Logo, não é um problema fazer aproximações de maneira moderada. 
+Nível | Tamanho da entrada | Complexidade do nível
+------------ | ------------- | -------------
+0 | n | cn
+1 | n/2 | cn
+2 | n/4 | cn
+... | ... | ...
+i | n/2^i | cn
+
+Dessa forma, no nível i, temos que o tamanho da entrada é n/2^i, e a complexidade de cada nível é constante e igual a cn. Sabe-se que nas folhas o tamanho da entrada é 1; assim, pode-se descobrir qual o último nível (e, por consequência, a altura da árvore) fazendo uso da relação apresentada acima:
+
+![equation](https://latex.codecogs.com/gif.latex?%5C%5C%20n%20/%202%5Ei%20%3D%201%20%5C%5C%20n%20%3D%202%5Ei%20%5C%5C%20i%20%3D%20log%20n)
+
+Como a árvore começa no nível 0 e o último nível é log n, sua altura é dada por log n + 1. Por fim, como sabemos que cada nível tem a mesma soma de complexidades (cn), o cálculo de complexidade se resume à multiplicação do número de níveis (a altura) e a complexidade dos níveis:
+
+![equation](https://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20cn%28log%20n%20&plus;%201%29%20%3D%20cnlog%20n%20&plus;%20cn%20%3D%20O%28n%20log%20n%29)
+
+#### Arsenal matemático
+
+Em casos nos quais a complexidade de cada nível tem valor dependente do nível, deve-se ter conhecimento do cálculo da soma de elementos de uma progressão geométrica. Em várias situações pode-se chegar a cálculos matemáticos muito complexos; assim, uma aproximação muito importante de se ter em mente é a soma dos elementos de uma PG infinita. É interessante reforçar que o método da árvore pode não trazer resultados precisos, mas, em geral, fornece um *upper bound* satisfatório.
 
 ### Método mestre
 
