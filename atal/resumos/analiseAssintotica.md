@@ -4,31 +4,31 @@
 
 Deseja-se que um algoritmo faça uso de recursos computacionais (tempo e espaço) de maneira eficiente.
 
-Exemplo: Busca binária
+**Exemplo:** Busca binária
  - Entrada: um array de tamanho n
  - Saída esperada: índice no array caso elemento exista, -1 caso contrário
  - Número de buscas feitas: ~log n
 
-Análise experimental
+**Análise experimental**
  - Tem custo alto
  - Limitada às escolhas feitas pelo desenvolvedor, podendo assim trazer resultados ilusórios
 
-Abordagem ["back-of-the-envelope"](https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation)
+**Abordagem ["back-of-the-envelope"](https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation)**
  - Cálculo aproximado, assim chamado por ser caracterizado por um cálculo rápido, feito em qualquer papel disponível
  - Não tem verdadeira base matemática, mas baseia-se em suposições simplificadas que fazem os resultados serem melhores que tentar adivinhar cegamente
 
-## Notação assintótica
+## Notação Assintótica
 
 A eficiência de um algoritmo é prevista em função do tamanho da entrada recebida. Em geral, basta determinar uma *ordem* do crescimento da função de tempo do algoritmo. Para expressar essa ordem, usa-se a **notação assintótica**, uma notação que define um conjunto de funções com mesma ordem de crescimento. A mais comumente utilizada é a notação Big-O; quando escreve-se que f(n) pertence a O(g(n)), está-se dizendo que f(n) e todas as demais funções que pertencem a O(g(n)) têm crescimento que não excede g(n).
 
 O algoritmo busca binária tem custo O(log n). A função de custo exato do algoritmo não é conhecida; por isso, dizemos que esta função desconhecida é de "ordem" log n.
 
-Principais notações:
+**Principais notações:**
 - O(n): pior caso (limite superior)
 - Ω(n): melhor caso (limite inferior)
 - Θ(n): mais precisa (ambos limites; "tightly bound")
 
-Ordens mais comuns:
+**Ordens mais comuns:**
 - constante: 1
 - logarítmica: log n
 - polinomial: n^k
@@ -37,14 +37,14 @@ Ordens mais comuns:
 - exponencial: 2^n
 - fatorial: n!
 
-## Cálculo da complexidade de algoritmos
+## Cálculo da Complexidade de Algoritmos
 
 Existem três principais estratégias para o cálculo de complexidade:
 1. Método da árvore
 2. Método mestre
 3. Método da substituição (prova)
 
-### Método da árvore
+### Método da Árvore
 
 O **método da árvore de recursão** consiste em esboçar uma árvore que representa a execução da relação de recorrência analisada para, a partir dela, determinar uma aproximação da complexidade do algoritmo estudado. 
 
@@ -80,6 +80,6 @@ Como a árvore começa no nível 0 e o último nível é log n, sua altura é da
 
 Em casos nos quais a complexidade de cada nível tem valor dependente do nível, deve-se ter conhecimento do cálculo da soma de elementos de uma progressão geométrica. Em várias situações pode-se chegar a cálculos matemáticos muito complexos; assim, uma aproximação muito importante de se ter em mente é a soma dos elementos de uma PG infinita. É interessante reforçar que o método da árvore pode não trazer resultados precisos, mas, em geral, fornece um *upper bound* satisfatório.
 
-### Método mestre
+### Método Mestre
 
-### Método da substituição
+### Método da Substituição

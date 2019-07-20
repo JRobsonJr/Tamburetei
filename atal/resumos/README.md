@@ -3,7 +3,7 @@
 ## Sumário
 - [Introdução à Disciplina](introducao.md)
 - [Análise Assintótica (Incompleto)](analiseAssintotica.md)
-- Análise Amortizada
+- [Análise Amortizada](analiseAmortizada.md)
 - Análise de Corretude
 - Projeto de Algoritmos
   - Paradigma Força Bruta
